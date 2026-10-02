@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Boyfriend Day, Duduuu ❤️</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #fff7f8;
+    color: #4b3038;
+    overflow-x: hidden;
+}
+
+/* =========================
+   PAGE SYSTEM
+========================= */
+
+.page {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s;
+
+    overflow-y: auto;
+}
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    z-index: 10;
+}
+
+/* =========================
+   SOFT BACKGROUND
+========================= */
+
+.page::before {
+    content: "";
+    position: fixed;
+    width: 420px;
+    height: 420px;
+
+    background: rgba(255, 188, 202, 0.22);
+    filter: blur(90px);
+    border-radius: 50%;
+
+    top: -150px;
+    left: -120px;
+
+    pointer-events: none;
+}
+
+.page::after {
+    content: "";
+    position: fixed;
+    width: 350px;
+    height: 350px;
+
+    background: rgba(255, 220, 226, 0.35);
+    filter: blur(90px);
+    border-radius: 50%;
+
+    bottom: -150px;
+    right: -120px;
+
+    pointer-events: none;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.script {
+    font-family: "Parisienne", cursive;
+    color: #c45b76;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+    font-weight: 500;
+}
+
+.subtitle {
+    margin-top: 18px;
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+    line-height: 1.7;
+    color: #805d67;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.92rem;
+
+    color: white;
+    background: #c96b83;
+
+    padding: 13px 23px;
+    border-radius: 50px;
+
+    margin-top: 30px;
+
+    box-shadow: 0 10px 25px rgba(181, 86, 112, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: #b95670;
+    box-shadow: 0 14px 30px rgba(181, 86, 112, 0.25);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+/* =========================
+   PAGE 1
+========================= */
+
+.intro-heart {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    animation: heartbeat 2s infinite;
+}
+
+.couple {
+    margin: 35px auto 25px;
+    width: 160px;
+    height: 125px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+
+    position: relative;
+}
+
+/* Minimal Bubu-Dudu-inspired abstract characters */
+
+.bear {
+    position: relative;
+    width: 65px;
+    height: 75px;
+    border-radius: 45% 45% 40% 40%;
+}
+
+.bear.left {
+    background: #f2dfd4;
+}
+
+.bear.right {
+    background: #d9b19a;
+}
+
+.ear {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: -8px;
+    background: inherit;
+}
+
+.ear.left-ear {
+    left: 4px;
+}
+
+.ear.right-ear {
+    right: 4px;
+}
+
+.eye {
+    position: absolute;
+    width: 5px;
+    height: 7px;
+    background: #593d42;
+    border-radius: 50%;
+    top: 30px;
+}
+
+.eye.one {
+    left: 20px;
+}
+
+.eye.two {
+    right: 20px;
+}
+
+.nose {
+    position: absolute;
+    width: 7px;
+    height: 5px;
+    background: #714c53;
+    border-radius: 50%;
+    top: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.blush {
+    position: absolute;
+    width: 12px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(231, 116, 137, 0.3);
+    top: 43px;
+}
+
+.blush.left {
+    left: 7px;
+}
+
+.blush.right {
+    right: 7px;
+}
+
+.small-heart {
+    position: absolute;
+    top: 4px;
+    right: 20px;
+    color: #d56b83;
+    font-size: 18px;
+    animation: floatHeart 2.5s ease-in-out infinite;
+}
+
+/* =========================
+   PAGE 2
+========================= */
+
+.letter-content {
+    max-width: 720px;
+    padding: 20px 0 40px;
+}
+
+.envelope-area {
+    margin: 30px auto 20px;
+}
+
+.envelope {
+    width: min(310px, 85vw);
+    height: 190px;
+
+    margin: auto;
+
+    position: relative;
+
+    background: #e7a4b3;
+
+    border-radius: 8px;
+
+    box-shadow: 0 20px 45px rgba(166, 86, 108, 0.18);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.6s ease,
+        opacity 0.6s ease;
+}
+
+.envelope::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: #f0b5c2;
+
+    clip-path: polygon(0 0, 50% 58%, 100% 0);
+
+    transform-origin: top;
+
+    transition: transform 0.9s ease;
+}
+
+.envelope::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 155px solid transparent;
+    border-right: 155px solid transparent;
+    border-bottom: 95px solid #d98fa1;
+}
+
+.envelope.open {
+    transform: translateY(15px);
+}
+
+.envelope.open::before {
+    transform: rotateX(180deg);
+}
+
+.letter-card {
+    width: min(620px, 94vw);
+
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    margin: 0 auto;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border: 1px solid rgba(200, 110, 132, 0.12);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(119, 69, 83, 0.08);
+
+    text-align: left;
+
+    transition:
+        max-height 1.2s ease,
+        opacity 0.8s ease,
+        margin 0.8s ease,
+        padding 0.8s ease;
+}
+
+.letter-card.show {
+    max-height: 900px;
+    opacity: 1;
+    margin-top: 25px;
+    padding: 30px;
+}
+
+.letter-card p {
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: #654852;
+    margin-bottom: 18px;
+}
+
+.letter-ending {
+    font-family: "Parisienne", cursive;
+    font-size: 1.7rem !important;
+    color: #c45b76 !important;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.secret {
+    max-width: 600px;
+
+    margin: 22px auto 0;
+    padding: 0 20px;
+
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+
+    transition:
+        opacity 0.7s ease,
+        max-height 0.8s ease,
+        padding 0.7s ease;
+}
+
+.secret.show {
+    opacity: 1;
+    max-height: 250px;
+    padding: 20px;
+}
+
+.secret p {
+    font-family: "Parisienne", cursive;
+    font-size: 1.65rem;
+    line-height: 1.5;
+    color: #bd5874;
+}
+
+/* =========================
+   PAGE 3
+========================= */
+
+.final-content {
+    max-width: 700px;
+}
+
+.final-heart {
+    font-size: 1.5rem;
+    animation: heartbeat 2s infinite;
+    margin-bottom: 25px;
+}
+
+.big-love {
+    font-size: clamp(4rem, 17vw, 8rem);
+    letter-spacing: 3px;
+
+    font-family: "Parisienne", cursive;
+    color: #c65d78;
+
+    line-height: 1;
+}
+
+.final-subtitle {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #76545e;
+}
+
+.distance {
+    margin-top: 35px;
+
+    font-size: 1rem;
+    line-height: 2;
+
+    color: #795863;
+}
+
+.distance span {
+    display: block;
+}
+
+.final-line {
+    margin-top: 45px;
+
+    font-family: "Parisienne", cursive;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+
+    color: #bd5874;
+}
+
+.final-secret {
+    opacity: 0;
+    max-height: 0;
+
+    overflow: hidden;
+
+    max-width: 500px;
+    margin: auto;
+
+    transition:
+        opacity 0.7s ease,
+        max-height 0.8s ease,
+        margin 0.7s ease;
+}
+
+.final-secret.show {
+    opacity: 1;
+    max-height: 200px;
+    margin-top: 25px;
+}
+
+.final-secret p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #76545e;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+
+    color: rgba(199, 91, 119, 0.35);
+
+    font-size: 16px;
+
+    pointer-events: none;
+
+    animation: rise 8s linear infinite;
+
+    z-index: 1;
+}
+
+.heart1 {
+    left: 10%;
+    animation-delay: 1s;
+}
+
+.heart2 {
+    left: 25%;
+    animation-delay: 4s;
+}
+
+.heart3 {
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.heart4 {
+    left: 85%;
+    animation-delay: 5s;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes floatHeart {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 20px;
+    }
+
+    .subtitle {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .letter-card.show {
+        padding: 23px;
+    }
+
+    .letter-card p {
+        font-size: 0.9rem;
+        line-height: 1.75;
+    }
+
+    .secret p {
+        font-size: 1.45rem;
+    }
+
+    .envelope {
+        width: 280px;
+        height: 175px;
+    }
+
+    .envelope::after {
+        border-left-width: 140px;
+        border-right-width: 140px;
+        border-bottom-width: 88px;
+    }
+
+    .final-line {
+        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     FLOATING HEARTS
+========================= -->
+
+<div class="floating-heart heart1">♡</div>
+<div class="floating-heart heart2">♡</div>
+<div class="floating-heart heart3">♡</div>
+<div class="floating-heart heart4">♡</div>
+
+
+<!-- =====================================================
+     PAGE 1 — INTRO
+===================================================== -->
+
+<section class="page active" id="page1">
+
+    <div class="content">
+
+        <div class="intro-heart">♡</div>
+
+        <h1 class="script">
+            Happy Boyfriend Day,<br>
+            Dudu ❤️
+        </h1>
+
+        <p class="subtitle">
+            Even miles apart, you still feel like my closest person
+        </p>
+
+
+        <!-- Minimal cute couple -->
+
+        <div class="couple">
+
+            <div class="bear left">
+                <div class="ear left-ear"></div>
+                <div class="ear right-ear"></div>
+
+                <div class="eye one"></div>
+                <div class="eye two"></div>
+
+                <div class="nose"></div>
+
+                <div class="blush left"></div>
+                <div class="blush right"></div>
+            </div>
+
+            <div class="bear right">
+                <div class="ear left-ear"></div>
+                <div class="ear right-ear"></div>
+
+                <div class="eye one"></div>
+                <div class="eye two"></div>
+
+                <div class="nose"></div>
+
+                <div class="blush left"></div>
+                <div class="blush right"></div>
+            </div>
+
+            <div class="small-heart">♥</div>
+
+        </div>
+
+
+        <button onclick="goToPage(2)">
+            Open this little surprise Budhhe ♡
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 2 — LOVE LETTER
+===================================================== -->
+
+<section class="page" id="page2">
+
+    <div class="content letter-content">
+
+        <h2 class="script">
+            A little letter for you...
+        </h2>
+
+        <div class="envelope-area">
+
+            <div
+                class="envelope"
+                id="envelope"
+                onclick="openLetter()"
+            ></div>
+
+        </div>
+
+
+        <button
+            id="openLetterButton"
+            onclick="openLetter()"
+        >
+            Open my letter 💌
+        </button>
+
+
+        <!-- LOVE LETTER -->
+
+        <div
+            class="letter-card"
+            id="letter"
+        >
+
+            <p>
+                I know we don't get to be together the way other couples do
+                We can't randomly meet, sit together, hold hands or spend
+                every little moment together
+            </p>
+
+            <p>
+                But somehow, even from miles away,without being able to see you everyday
+                you have become such an important part of my life januu 
+            </p>
+
+            <p>
+                I love you without touching you, without having you
+                beside me every day, and without being able to see you
+                whenever I want
+            </p>
+
+            <p>
+                I love you through calls, messages, waiting, missing you,
+                laughing together and all those little moments that somehow
+                make the distance feel a little smaller
+            </p>
+
+            <p>
+                Maybe distance isn't easy, but loving you has always felt
+                worth it
+            </p>
+
+            <p class="letter-ending">
+                Until we don't have to count the miles anymore... ❤️
+            </p>
+
+        </div>
+
+
+        <!-- SECRET BUTTON -->
+
+        <button
+            id="secretButton"
+            onclick="showSecret()"
+            style="display:none;"
+        >
+            There's still a secret for you...
+        </button>
+
+
+        <!-- SECRET MESSAGE -->
+
+        <div
+            class="secret"
+            id="secretMessage"
+        >
+
+            <p>
+                Secretly... I still imagine the day when this long-distance
+                thing becomes just a story we'll tell each other
+                Until then, I'll keep choosing you My Love♡
+            </p>
+
+            <button onclick="goToPage(3)">
+                There's one more thing... ♡
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 3 — FINAL MESSAGE
+===================================================== -->
+
+<section class="page" id="page3">
+
+    <div class="content final-content">
+
+        <div class="final-heart">
+            ♡
+        </div>
+
+
+        <div class="small-love">
+            I LOVE YOUUU DUDUU
+        </div>
+
+
+        <p class="final-subtitle">
+            more than these three words can ever explain
+        </p>
+
+
+        <div class="distance">
+
+            <span>Different cities</span>
+
+            <span>Different moments</span>
+
+            <span>Same love❤️</span>
+
+        </div>
+
+
+        <div class="final-line">
+            Distance is temporary<br>
+            What you mean to me isn't
+        </div>
+
+
+        <button
+            onclick="showFinalSecret()"
+            id="finalButton"
+        >
+            One last secret ♡
+        </button>
+
+
+        <div
+            class="final-secret"
+            id="finalSecret"
+        >
+
+            <p>
+                I'm still waiting for that one day when I can finally say
+                "I love you shonaaa" without a screen between us ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
+
+function goToPage(pageNumber) {
+
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+    });
+
+    const selectedPage =
+        document.getElementById("page" + pageNumber);
+
+    selectedPage.classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* =====================================================
+   OPEN LOVE LETTER
+===================================================== */
+
+let letterOpened = false;
+
+function openLetter() {
+
+    if (letterOpened) return;
+
+    letterOpened = true;
+
+    const envelope =
+        document.getElementById("envelope");
+
+    const letter =
+        document.getElementById("letter");
+
+    const button =
+        document.getElementById("openLetterButton");
+
+    const secretButton =
+        document.getElementById("secretButton");
+
+
+    /* Open envelope */
+
+    envelope.classList.add("open");
+
+
+    /* Change button */
+
+    button.innerHTML = "My letter is open ♡";
+    button.style.opacity = "0.6";
+    button.style.pointerEvents = "none";
+
+
+    /* Reveal letter after envelope animation */
+
+    setTimeout(() => {
+
+        letter.classList.add("show");
+
+        secretButton.style.display = "inline-block";
+
+        setTimeout(() => {
+            letter.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }, 300);
+
+    }, 700);
+}
+
+
+/* =====================================================
+   SECRET MESSAGE
+===================================================== */
+
+function showSecret() {
+
+    const secret =
+        document.getElementById("secretMessage");
+
+    const button =
+        document.getElementById("secretButton");
+
+
+    secret.classList.add("show");
+
+    button.style.display = "none";
+
+
+    setTimeout(() => {
+
+        secret.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }, 300);
+}
+
+
+/* =====================================================
+   FINAL SECRET
+===================================================== */
+
+function showFinalSecret() {
+
+    const finalSecret =
+        document.getElementById("finalSecret");
+
+    const finalButton =
+        document.getElementById("finalButton");
+
+
+    finalSecret.classList.add("show");
+
+    finalButton.style.display = "none";
+
+
+    setTimeout(() => {
+
+        finalSecret.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }, 300);
+}
+
+</script>
+
+</body>
+</html>
